@@ -19,15 +19,15 @@ jobs:
           python-version: '3.12'
 
       - name: Run Herztext.py
-        working-directory: .  
+        working-directory: ./simple_py_program
         run: python Herztext.py
 
       - name: Run Sanduhr.py
-        working-directory: .  
+        working-directory: ./simple_py_program
         run: python Sanduhr.py
 
       - name: Run day_counter.py
-        working-directory: ./simple_py_program  
+        working-directory: ./simple_py_program
         run: python day_counter.py
 
       - name: Insert Outputs into README

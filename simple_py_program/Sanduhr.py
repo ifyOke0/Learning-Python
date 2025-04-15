@@ -1,19 +1,18 @@
-import os
-
 def Sanduhr_muster(n):
-    lines = []
+    # Die Reichweite.
     for i in range(n, 0, -1):
-        lines.append(" " * (n - i) + "* " * i)
-    for i in range(2, n + 1):
-        lines.append(" " * (n - i) + "* " * i)
-    return "\n".join(lines)
+        print(" " * (n - i) + "* " * i)
+    for i in range(2, n, 1):
+        print(" " * (n - i) + "* " * i)
 
-output = Sanduhr_muster(5)
-print(output)
+output = ""  
 
+# Capture output into the variable
+for i in range(5, 0, -1):
+    output += " " * (5 - i) + "* " * i + "\n"
+for i in range(2, 5):
+    output += " " * (5 - i) + "* " * i + "\n"
 
-repo_root = os.path.dirname(os.path.abspath(__file__))  
-output_path = os.path.join(repo_root, "output_Sanduhr.md")
-
-with open(output_path, "w", encoding="utf-8") as f:
-    f.write("```\n" + output + "\n```")
+# Save output to the root folder
+with open("output_Sanduhr.md", "w", encoding="utf-8") as f:
+    f.write("```\n" + output + "```\n")
