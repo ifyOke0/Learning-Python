@@ -2,8 +2,9 @@ name: Update Day Counter
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight
-  workflow_dispatch: # Also allows manual trigger
+    - cron: '0 0 * * *'
+
+  workflow_dispatch:
 
 jobs:
   update:
@@ -14,20 +15,20 @@ jobs:
 
       - name: Calculate and Update README
         run: |
-          START_DATE="2025-04-13"  
+          START_DATE="2025-04-13"
           TODAY=$(date +%s)
           START=$(date -d $START_DATE +%s)
-          DIFF=$(( (TODAY - START) / 86400 + 1 ))  
+          DIFF=$(( (TODAY - START) / 86400 + 1 ))
 
           if [ $DIFF -gt 100 ]; then
             DIFF=100
           fi
 
-          sed -i "s/DAY_COUNTER_PLACEHOLDER/Day $DIFF learning Python/g" README.md
+          sed -i "s|**Day .* learning Python**|**Day $DIFF learning Python**|g" README.md
 
       - name: Commit and Push changes
         run: |
           git config --global user.name "1501henify"
           git config --global user.email "henify@users.noreply.github.com"
-          git commit -am "Update day counter"
+          git commit -am "Update day counter to Day $DIFF"
           git push
