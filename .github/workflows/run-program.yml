@@ -1,59 +1,34 @@
-name: Skripte ausführen und README aktualisieren
+name: 🗓️ Update Python Day Counter
 
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "0 8 * * *"  
   workflow_dispatch:
 
 jobs:
-  run-scripts:
+  update-day-counter:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Python
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      - name: Run Herztext.py
-        working-directory: ./simple_py_program
-        run: python Herztext.py
-
-      - name: Run Sanduhr.py
-        working-directory: ./simple_py_program
-        run: python Sanduhr.py
-
-      - name: Run day_counter.py
+      - name: ▶️ Run day_counter.py
         working-directory: ./simple_py_program
         run: python day_counter.py
 
-      - name: Insert Outputs into README
-        run: |
-          declare -A outputs
-          outputs[HERZTEXT]="output_Herztext.md"
-          outputs[SANDUHR]="output_Sanduhr.md"
-
-          # Insert outputs into README file
-          for key in "${!outputs[@]}"; do
-            start="<!-- ${key}_OUTPUT_START -->"
-            end="<!-- ${key}_OUTPUT_END -->"
-            content=$(cat "${outputs[$key]}")
-            awk -v s="$start" -v e="$end" -v r="$content" '
-              BEGIN {print_section=1}
-              $0 ~ s {print; print r; print_section=0; next}
-              $0 ~ e {print_section=1}
-              print_section==1 {print}
-            ' README.md > tmp && mv tmp README.md
-          done
-
-      - name: Commit changes and push
+      - name: 📤 Commit and push if changed
         run: |
           git config --global user.name "1501henify"
           git config --global user.email "henify@users.noreply.github.com"
-          git add README.md
-          git commit -m "README updated with latest outputs and day counter"
+          git add ../README.md
+          git diff --cached --quiet || git commit -m "🔁 Updated day counter in README"
           git push
         continue-on-error: true
