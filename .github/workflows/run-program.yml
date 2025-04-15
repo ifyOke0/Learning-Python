@@ -1,50 +1,12 @@
-name: Skripte ausführen und README aktualisieren
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-jobs:
-  run-scripts:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Python einrichten
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
-
-      - name: Herztext.py ausführen
-        run: python simple_py_program/Herztext.py
-
-      - name: Sanduhr.py ausführen
-        run: python simple_py_program/Sanduhr.py
-
-      - name: Ausgaben in README einfügen
-        run: |
-          declare -A outputs
-          outputs[HERZTEXT]="output_Herztext.md"
-          outputs[SANDUHR]="output_Sanduhr.md"
-
-          for key in "${!outputs[@]}"; do
-            start="<!-- ${key}_OUTPUT_START -->"
-            end="<!-- ${key}_OUTPUT_END -->"
-            content=$(cat "${outputs[$key]}")
-            awk -v s="$start" -v e="$end" -v r="$content" '
-              BEGIN {print_section=1}
-              $0 ~ s {print; print r; print_section=0; next}
-              $0 ~ e {print_section=1}
-              print_section==1 {print}
-            ' README.md > tmp && mv tmp README.md
-          done
-
-      - name: Änderungen committen
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "README mit aktuellen Ausgaben aktualisiert" || echo "No changes to commit"
-          git push
-        continue-on-error: true
+- name: Update README with script outputs
+  run: |
+    for file in output_Herztext.md output_Sanduhr.md; do
+      placeholder_start="<!-- ${file%.*}_OUTPUT_START -->"
+      placeholder_end="<!-- ${file%.*}_OUTPUT_END -->"
+      content=$(cat $file)
+      awk -v start="$placeholder_start" -v end="$placeholder_end" -v content="$content" '
+        $0 == start {print; print content; skip=1; next}
+        $0 == end {skip=0}
+        !skip {print}
+      ' README.md > tmp && mv tmp README.md
+    done
