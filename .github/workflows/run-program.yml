@@ -10,31 +10,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Repository auschecken
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Python einrichten
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      - name: Herztext.py ausführen
-        run: python simple_py_program/Herztext.py
+      - name: Run Herztext.py
+        working-directory: .  
+        run: python Herztext.py
 
-      - name: Sanduhr.py ausführen
-        run: python simple_py_program/Sanduhr.py
+      - name: Run Sanduhr.py
+        working-directory: .  
+        run: python Sanduhr.py
 
-      - name: Day Counter aktualisieren
-        run: python simple_py_program/day_counter.py
+      - name: Run day_counter.py
+        working-directory: ./simple_py_program  
+        run: python day_counter.py
 
-      - name: Ausgaben und Tag in README einfügen
+      - name: Insert Outputs into README
         run: |
           declare -A outputs
-          outputs[HERZTEXT]="simple_py_program/output_Herztext.md"
-          outputs[SANDUHR]="simple_py_program/output_Sanduhr.md"
-          
-          readme_path="README.md"
-          
+          outputs[HERZTEXT]="output_Herztext.md"
+          outputs[SANDUHR]="output_Sanduhr.md"
+
+          # Insert outputs into README file
           for key in "${!outputs[@]}"; do
             start="<!-- ${key}_OUTPUT_START -->"
             end="<!-- ${key}_OUTPUT_END -->"
@@ -44,14 +46,14 @@ jobs:
               $0 ~ s {print; print r; print_section=0; next}
               $0 ~ e {print_section=1}
               print_section==1 {print}
-            ' "$readme_path" > tmp && mv tmp "$readme_path"
+            ' README.md > tmp && mv tmp README.md
           done
 
-      - name: Änderungen committen
+      - name: Commit changes and push
         run: |
           git config --global user.name "1501henify"
           git config --global user.email "henify@users.noreply.github.com"
           git add README.md
-          git commit -m "README automatisch aktualisiert mit Ausgaben und Tag"
+          git commit -m "README updated with latest outputs and day counter"
           git push
         continue-on-error: true

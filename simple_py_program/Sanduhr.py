@@ -1,16 +1,19 @@
-def Sanduhr_muster(n):
-    output = ""
-    
-    for i in range(n, 0, -1):
-        output += " " * (n - i) + "* " * i + "\n"
+import os
 
-    for i in range(2, n, 1):
-        output += " " * (n - i) + "* " * i + "\n"
-    
-    return output
+def Sanduhr_muster(n):
+    lines = []
+    for i in range(n, 0, -1):
+        lines.append(" " * (n - i) + "* " * i)
+    for i in range(2, n + 1):
+        lines.append(" " * (n - i) + "* " * i)
+    return "\n".join(lines)
 
 output = Sanduhr_muster(5)
+print(output)
 
-with open("output_Sanduhr.md", "w", encoding="utf-8") as f:
-    f.write("```\n" + output + "```\n")
 
+repo_root = os.path.dirname(os.path.abspath(__file__))  
+output_path = os.path.join(repo_root, "output_Sanduhr.md")
+
+with open(output_path, "w", encoding="utf-8") as f:
+    f.write("```\n" + output + "\n```")

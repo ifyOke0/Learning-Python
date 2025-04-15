@@ -1,39 +1,33 @@
+import datetime
 import os
-from datetime import datetime
 
-# === CONFIGURATION ===
-start_date = datetime(2025, 5, 13)
-max_days = 100
+start_date = datetime.date(2025, 5, 13)
 
-# === CALCULATE DAY ===
-today = datetime.now()
-days_passed = (today - start_date).days + 1
+today = datetime.date.today()
 
-if days_passed > max_days:
-    day_message = f"Day {max_days} of Python Coding"
-elif days_passed < 1:
-    day_message = "Day 0 of Python Coding"
-else:
-    day_message = f"Day {days_passed} of Python Coding"
+# Calculate the number of days between today and the start date
+days = (today - start_date).days + 1
+days = max(0, min(days, 100))
 
-# === LOCATE README ===
-# This gets the parent directory of the script
-parent_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-readme_path = os.path.join(parent_path, "README.md")
+line_text = f"Day {days} of Python Coding"
 
-# === UPDATE README.md ===
-start_tag = "<!-- PYTHON_DAY_COUNTER -->"
-end_tag = "<!-- PYTHON_DAY_COUNTER_END -->"
+# Paths
+script_dir = os.path.dirname(os.path.abspath(__file__))
+readme_path = os.path.join(script_dir, "..", "README.md")
 
+# Read and replace in README
 with open(readme_path, "r", encoding="utf-8") as f:
-    readme_content = f.read()
-
-# Replaces content between the start and end tags
-before = readme_content.split(start_tag)[0] + start_tag + "\n"
-after = "\n" + end_tag + readme_content.split(end_tag)[1]
-new_content = before + day_message + after
+    lines = f.readlines()
 
 with open(readme_path, "w", encoding="utf-8") as f:
-    f.write(new_content)
-
-print("README.md updated with:", day_message)
+    inside_block = False
+    for line in lines:
+        if "<!-- PYTHON_DAY_COUNTER -->" in line:
+            f.write(line)
+            f.write(line_text + "\n")
+            inside_block = True
+        elif "<!-- PYTHON_DAY_COUNTER_END -->" in line:
+            inside_block = False
+            f.write(line)
+        elif not inside_block:
+            f.write(line)
