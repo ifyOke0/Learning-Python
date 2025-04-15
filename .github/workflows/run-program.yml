@@ -16,11 +16,11 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name(1): Herztext.py ausführen
+      - name: Herztext.py ausführen
         working-directory: ./simple_py_program
         run: python Herztext.py
 
-      - name(2): Sanduhr.py ausführen
+      - name: Sanduhr.py ausführen
         working-directory: ./simple_py_program
         run: python Sanduhr.py
 
@@ -47,6 +47,6 @@ jobs:
           git config --global user.name "1501henify"
           git config --global user.email "henify@users.noreply.github.com"
           git add README.md
-          git commit -m "README mit aktuellen Ausgaben aktualisiert"
+          git commit -m "README mit aktuellen Ausgaben aktualisiert" || echo "No changes to commit"
           git push
         continue-on-error: true

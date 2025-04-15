@@ -1,34 +1,39 @@
-name: Update Day Counter
+name: 🐍 Update Python Day Counter
 
 on:
+  push:
+    branches: [main]
   schedule:
-    - cron: '0 0 * * *'
-
-  workflow_dispatch:
+    - cron: '0 0 * * *'  
 
 jobs:
-  update:
+  update-day-counter:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Calculate and Update README
+      - name: Calculate and update Python day
         run: |
-          START_DATE="2025-04-13"
-          TODAY=$(date +%s)
-          START=$(date -d $START_DATE +%s)
-          DIFF=$(( (TODAY - START) / 86400 + 1 ))
+          START_DATE="2025-05-13"
+          TODAY=$(date -u +"%Y-%m-%d")
 
-          if [ $DIFF -gt 100 ]; then
-            DIFF=100
+          START_SEC=$(date -d "$START_DATE" +%s)
+          TODAY_SEC=$(date -d "$TODAY" +%s)
+
+          DIFF_DAYS=$(( (TODAY_SEC - START_SEC) / 86400 + 1 ))
+
+          if [ "$DIFF_DAYS" -gt 100 ]; then
+            DIFF_DAYS=100
           fi
 
-          sed -i "s|**Day .* learning Python**|**Day $DIFF learning Python**|g" README.md
+          sed -i "/<!-- PYTHON_DAY_COUNTER -->/,/<!-- PYTHON_DAY_COUNTER_END -->/c\\<!-- PYTHON_DAY_COUNTER -->\nDay $DIFF_DAYS of Python Coding\n<!-- PYTHON_DAY_COUNTER_END -->" README.md
 
-      - name: Commit and Push changes
+      - name: Commit and push if changed
         run: |
-          git config --global user.name "1501henify"
-          git config --global user.email "henify@users.noreply.github.com"
-          git commit -am "Update day counter to Day $DIFF"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "📆 Auto-update Python coding day"
           git push
