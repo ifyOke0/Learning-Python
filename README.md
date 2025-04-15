@@ -12,17 +12,11 @@ Each one is a small step toward becoming a full-stack developer.
 
 ### 🔸 [`Herztext.py`](https://github.com/1501henify/Learning-Python/blob/main/simple_py_program%2FHerztext.py)
 <!-- HERZTEXT_OUTPUT_START -->
-```md
-❤️ Herzliche Grüße von deinem Code! ❤️
-
 <!-- HERZTEXT_OUTPUT_END -->
 
 
 ### 🔸 [`Sanduhr.py`](https://github.com/1501henify/Learning-Python/blob/main/simple_py_program%2FSanduhr.py)
 <!-- SANDUHR_OUTPUT_START -->
-```md
-⏳ Eine einfache Sanduhr in Python ⏳
-
 <!-- SANDUHR_OUTPUT_END -->
 
 
