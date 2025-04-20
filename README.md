@@ -13,5 +13,5 @@ Each one is a small step toward becoming a full-stack developer.
 ---
 
 ## 📆 Day Counter
-✨ **Day 5 of Learning Python** ✨
+✨ **Day 7 of Learning Python** ✨
 
