@@ -1,5 +1,11 @@
 # 🐍 Henry’s Python Learning Journey
 
+## 📅 Progress
+
+```diff
+[⬜⬜-----------------------] 2%
+```
+
 ### `print("On a Python Learning Journey, Eyo ✌🏾")`
 
 Hey there! 👋  
@@ -10,6 +16,4 @@ Each one is a small step toward becoming a full-stack developer.
 
 ## 📆 Day Counter
 
-<!-- PYTHON_DAY_COUNTER -->
-Day 0 of Python Coding
-<!-- PYTHON_DAY_COUNTER_END -->
+✨ **Day 7 of Learning Python** ✨
