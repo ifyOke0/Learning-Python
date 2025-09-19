@@ -17,3 +17,10 @@ Each one is a small step toward becoming a full-stack developer.
 ## 📆 Day Counter
 ✨ **Day 8 of Learning Python** ✨
 
+<!-- STATS:START -->
+<!-- STATS:END -->
+
+<!-- UPDATED:START -->
+<!-- UPDATED:END -->
+
+
