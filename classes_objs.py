@@ -114,7 +114,7 @@ animal_speak(eule)   # Hoot
 
 ## Basic Functions
 '''
-functions are simple, and does'nt include any aparameters or return values
+functions are simple, and doesn't include any aparameters or return values
 and performs a single task, like so...;
 '''
 def greet():
