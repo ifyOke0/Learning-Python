@@ -108,24 +108,19 @@ eule = Eule()
 animal_speak(pferd)  # Neigh
 animal_speak(eule)   # Hoot
 
-
-
         ### Try Area
 
 ## Basic Functions
-'''
-functions are simple, and doesn't include any aparameters or return values
-and performs a single task, like so...;
-'''
-def greet():
-    print("Hallo, Leute!")
+"""
+Functions are simple, don't include any parameters or return values,
+and perform a single task, like so...
+"""
 
-
-## Functions with parameters
-#: functions accepting parameters are more flexible and readable.
-def greet(name):
-    print(f"Hallo, {name}")
-
+def greet(name=None):
+    if name:
+        print(f"Hallo, {name}")
+    else:
+        print("Hallo, Leute!")
 
 ## Functions with Return Values
 '''
