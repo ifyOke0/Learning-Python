@@ -156,7 +156,7 @@ def add_all(*args):       # With *args
     return sum(args)
 print(add_all(1, 2, 3, 4, 5))
 
-def print_info(**kwargs)  # With **kwargs
+def print_info(**kwargs):  # With **kwargs
     for key, value in kwargs.items():
         print(f"{key}: {value}")
 
