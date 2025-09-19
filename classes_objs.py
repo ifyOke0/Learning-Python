@@ -116,11 +116,12 @@ Functions are simple, don't include any parameters or return values,
 and perform a single task, like so...
 """
 
-def greet(name=None):
-    if name:
-        print(f"Hallo, {name}")
-    else:
-        print("Hallo, Leute!")
+def greet_group():
+    print("Hallo, Leute!")
+
+def greet_person(name):
+    print(f"Hallo, {name}")
+
 
 ## Functions with Return Values
 '''
