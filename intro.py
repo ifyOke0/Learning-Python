@@ -39,10 +39,10 @@ nachName = "Okeke"
 alt = "18"
 vollName = vorName +" "+ nachName
 
-print("Mein Vorname ist " + vorName)
-print("Mein Nachname ist " + nachName)
-print("Meine Alter ist " + alt)
-print("Mein Name in voll ist " + vollName)"""
+print("Mein Vorname is " + vorName)
+print("Mein Nachname is " + nachName)
+print("Meine Alter is " + alt)
+print("Mein Name in voll is " + vollName)""" 
 
 ######### Avoiding Type Errors With STR() Function #######
 """alt = 18
@@ -316,7 +316,7 @@ amazon_cart[0] = "Cars"
 # print(my_foods)
 # print(friends_foods)
 
-##### ORGANIZING  A LIST --- SORTIN A LIST ######
+##### ORGANIZING  A LIST --- SORTING A LIST ######
 #cars = ["bmw", "audi", "toyota",  "subaru"]
 # cars.sort()
 # #print(cars)
