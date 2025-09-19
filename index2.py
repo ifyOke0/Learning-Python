@@ -68,7 +68,7 @@ print(f"{name} will be {age + 5} years old in 5 years.")
 ### Try 7
 ##:Use loops and functions to eliminate duplication.
 '''
-users = ["Herr Goethe", "Frau Merkel", "Frau Ines", "Herr Geoff"]
+users = ["Herr Goethe", "Frau Merkel", "Frau Lines", "Herr Geoff"]
 
 # - better ✔
 
