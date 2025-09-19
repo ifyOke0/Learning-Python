@@ -68,7 +68,7 @@ print(f"{name} will be {age + 5} years old in 5 years.")
 ### Try 7
 ##:Use loops and functions to eliminate duplication.
 '''
-users = ["Herr Goethe", "Frau Merkel", "Frau Ine", "Herr Geoff"]
+users = ["Herr Goethe", "Frau Merkel", "Frau Ines", "Herr Geoff"]
 
 # - better ✔
 
@@ -235,7 +235,7 @@ print(count)
 '''
 
 ###:F-Strings
-##:Formatted strin literals
+##:Formatted string literals
 ##{f-strings} make formatting strings easier and more readable than the traditional format() method.
 '''name = 'Henry'
 age = 18
