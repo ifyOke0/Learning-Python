@@ -1,6 +1,6 @@
 # 🐍 Henry’s Python Learning Journey
 
-## 📅 Progress
+## 📅 My Progress
 <<<<<<< HEAD
 
 ```diff
@@ -15,7 +15,7 @@ Each one is a small step toward becoming a full-stack developer.
 ---
 
 ## 📆 Day Counter
-✨ **Day 8 of Learning Python** ✨
+✨ **Day 9 of Learning Python** ✨
 
 <!-- STATS:START -->
 📄 Total lines of code: 1280
