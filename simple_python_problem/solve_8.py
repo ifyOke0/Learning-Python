@@ -12,6 +12,6 @@ phones.insert(0, "Samsung")
 
 friends_Phones.append("Iphone")
 
-##Prove that you have two separate lists and print a message with the separarte lists
+##Prove that you have two separate lists and print a message with the separate lists
 print(phones)
 print(friends_Phones)

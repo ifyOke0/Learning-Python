@@ -14,7 +14,7 @@ elif operand == "/":
     if zahl2 != 0:
         ergebnis = zahl1 / zahl2
     else:
-        ergebnis = "Teilen durch Null(0) ist nicht erlaubt"
+        ergebnis = "Teilen durch Null(0) is nicht erlaubt"
 else:
     ergebnis = "Syntaxfehler!"
 

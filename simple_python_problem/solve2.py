@@ -17,7 +17,7 @@ gen_Message += f"\nSup {invited_Friends[0]}, What's up {invited_Friends[1]}, {in
 gen_Message += "\nThe party will take place at a newly allocated hall, more info's later.\n"
 print(gen_Message)
 
-##Add three more guests, one at the beggining[0], middle[?], and end of your list
+##Add three more guests, one at the beginning[0], middle[?], and end of your list
 invited_Friends.insert(0, "Maxwell")  #Beginning
 invited_Friends.insert(2, "Thomas")   #Middle
 invited_Friends.insert(5, "Joseph")    #End

@@ -17,3 +17,13 @@ Each one is a small step toward becoming a full-stack developer.
 ## 📆 Day Counter
 ✨ **Day 8 of Learning Python** ✨
 
+<!-- STATS:START -->
+📄 Total lines of code: 1280
+🐍 Number of Python files: 21
+<!-- STATS:END -->
+
+<!-- UPDATED:START -->
+🕒 Last updated: 2025-09-20 00:59 UTC
+<!-- UPDATED:END -->
+
+
