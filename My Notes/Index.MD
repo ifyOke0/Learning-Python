@@ -24,9 +24,11 @@ with open("file.txt", "r") as file:
     content = file.read()
 
 # - traditional method 👎🏾
+"""
 file = open("file.txt", "r")
 content = file.read()
 file.close()
+"""
 ```
 
 ### Try 4
@@ -39,10 +41,12 @@ def add_numbers(a, b):
     return a + b
 
 # - traditional method 👎🏾
+"""
 total = 0
 def add_to_total(num):
     global total
     total += num
+"""
 ```
 
 ### Try 5
@@ -57,10 +61,12 @@ except ZeroDivisionError:
     print("Cannot divide by zero.")
 
 # - traditional method 👎🏾 __catch's exceptions without handling them properly.
+"""
 try:
     result = 10 / x
 except Exception as e:
     pass
+"""
 ```
 
 ### Try 6
@@ -88,11 +94,12 @@ def greet_users(users):
 greet_users(users)
 
 # - traditional method 👎🏾
-
+"""
 print(f"Hallo, {users[0]}!")
 print(f"Hallo, {users[1]}!")
 print(f"Hallo, {users[2]}")
 print(f"Hallo, {users[3]}!")
+"""
 ```
 
 ```py
@@ -393,7 +400,7 @@ import os, sys, json
 #: In large projects, use relative imports to make code modular and avoid name clashes.
 
 from .subpackage import module
-#..This is especially useful when you have well organized packages.
+# This is especially useful when you have well organized packages.
 ```
 
 ```py
@@ -402,7 +409,7 @@ from .subpackage import module
 
 import numpy as np
 import pandas as pd
-#..This reduces repetitive typing and keeps your code more readable
+# This reduces repetitive typing and keeps your code more readable
 ```
 
 ```py
@@ -433,7 +440,7 @@ print(f"Secure Random Integer: {random_init}")
 ```py
 #: ...Generate a Secure URL-safe Token
 #: This program generates a secure URL-safe token, which is useful for
-#..generating things like secure reset links
+# generating things like secure reset links
 
 import secrets
 

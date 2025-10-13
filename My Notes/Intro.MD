@@ -39,11 +39,11 @@ print(meiene_Sprache.strip())
 ### Avoiding syntax error with strings
 
 ```py
-# python_message = 'One of Python's strength is it's diverse community.'
+# python_message = 'One of Python's strength is its diverse community.'
 # print(python_message) #Error
 
-python_message = "One of Python's_strength is its_diverse_community._"
-print(python_message) correct
+python_message = "One of Python's_strength is its diverse_community._"
+print(python_message)  #correct
 ```
 
 ### Concatenate
@@ -54,10 +54,10 @@ nachName = "Okeke"
 alt = "18"
 vollName = vorName +" "+ nachName
 
-print("Mein Vorname is " + vorName)
-print("Mein Nachname is " + nachName)
-print("Meine Alter is " + alt)
-print("Mein Name in voll is " + vollName)
+print("Mein Vorname ist " + vorName)
+print("Mein Nachname ist " + nachName)
+print("Meine Alter ist " + alt)
+print("Mein Name in voll ist " + vollName)
 ```
 
 ### Avoiding Type Errors With STR() Function
@@ -155,7 +155,7 @@ print(rulers)
 ### Conditional Logic `(if-elif-else)` Intro, Indentation & Short Circuiting
 
 ```py
-if(6 > 11):
+if 6 > 11:
     print("true")
 else:
     print("false")
@@ -235,10 +235,10 @@ while i <= 10:
 
 while True:
   response = input("What's my name: ")
-  if(response == 'Henry' or response == 'henry'):
+  if response == 'Henry' or response == 'henry':
     print("CORRECT!")
     break
-  elif(response != 'Henry'):
+  elif response != 'Henry':
     print("INCORRECT!!")
 ```
 
@@ -249,7 +249,7 @@ message = input("Tell us your name: ")
 print(message)
 
 name = input("What's your name: ")
-print("Hello " + Name + "!")
+print("Hello " + name + "!")
 
 customer = "When you shop from us, you get a discount."
 customer += "\nWhat's your name? "

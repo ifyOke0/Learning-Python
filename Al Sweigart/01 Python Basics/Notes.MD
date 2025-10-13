@@ -2,17 +2,17 @@
 REPL, explained;
 Read Evaluate Print Loop, this lets us run or execute Python instructions one at time and instantly shows it's output.
 
-Basic Math Operators in Python 
+### Basic Math Operators in Python 
 
-| Operator | Operation | Example |
-|:----|:-----------------:|:---------------:|
-| ** | Exponent(raised to the power) | 2 ** 3 = 8 |
-| %  | Modulus/Remainder | 22 % 8 i.e 2 rem 6 = 6 |            
-| // | Integer division/round up | 22 // 8 = 2.75, 2.75 rounds up to 2|
-| /  | Division | 22 / 8 = 2.75 |                       
-| *  | Multiplication | 3 * 5 = 15 |                         
-| -  | Subtraction | 5 - 2 = 3 |                           
-| +  | Addition | 5 + 5 = 10 |                          
+| Operator |           Operation           |               Example               |
+|:---------|:-----------------------------:|:-----------------------------------:|
+| **       | Exponent(raised to the power) |             2 ** 3 = 8              |
+| %        |       Modulus/Remainder       |       22 % 8 i.e 2 rem 6 = 6        |            
+| //       |   Integer division/round up   | 22 // 8 = 2.75, 2.75 rounds up to 2 |
+| /        |           Division            |            22 / 8 = 2.75            |                       
+| *        |        Multiplication         |             3 * 5 = 15              |                         
+| -        |          Subtraction          |              5 - 2 = 3              |                           
+| +        |           Addition            |             5 + 5 = 10              |                          
 
 ```py
 exponent = 8 ** 4
