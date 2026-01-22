@@ -1,13 +1,4 @@
 ## 🐍 Henry’s Python Learning Journey!
-
-### 📅 My Progress
-
-```diff
-[▓▓▓▓▓░░░░░░░░░░░░░░░░░░] 27%
-```
-
-`print("On a Python Learning Journey, Eyo ✌🏾")`
-
 Hey there! 👋  
 Welcome to my mini Python playground — a collection of simple, beginner-level Python programs I’m working on as I learn and grow.  
 Each one is a small step toward becoming a full-stack developer.
@@ -15,7 +6,7 @@ Each one is a small step toward becoming a full-stack developer.
 
 ### 📆 Day Counter
 
-✨ **Day 13 of Learning Python** ✨
+✨ **Day 17 of Learning Python** ✨
 
 <!-- STATS:START -->
 📄 Total lines of code: 328
@@ -23,5 +14,10 @@ Each one is a small step toward becoming a full-stack developer.
 <!-- STATS:END -->
 
 <!-- UPDATED:START -->
-🕒 Last updated: 2025-09-24 11:28 UTC
+🕒 Last updated: 2026-01-22 16:36 UTC
 <!-- UPDATED:END -->
+
+
+```py 
+print("On a Python Learning Journey, Eyo ✌🏾")
+```

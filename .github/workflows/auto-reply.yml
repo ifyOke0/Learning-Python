@@ -22,7 +22,7 @@ jobs:
           const comment = [
             `👋 Hello @${username}, thank you for opening an issue!`,
             ``,
-            `I will get back to you as soon as i can. - 1501henify`,
+            `I will get back to you as soon as i can. - ifyOke0`,
             ``,
             `We appreciate your input — Have a great day/night!`
           ].join('\n');

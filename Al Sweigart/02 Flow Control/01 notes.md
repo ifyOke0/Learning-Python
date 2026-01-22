@@ -1,4 +1,4 @@
-# Cont'd, Flow Control
+# Flow Control
 This analogy stuck; "Based on how expressions evaluate, a program can decide to skip instructions, repeat them, or choose one of several instructions to run".
 
 ### Flowcharts
@@ -193,3 +193,6 @@ if age == 10:
     else:
         print("Wrong password")
 ```
+
+[Back to python basics note <<<](../01%20Python%20Basics/notes.md)<br>
+[Next >>>](02%20note.md)
